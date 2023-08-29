@@ -17,7 +17,7 @@ class CalendarDaysView: UIView {
         view.distribution = .fillEqually
         
         let calendar = Calendar.current
-        var weekdaySymbols = calendar.weekdaySymbols
+        var weekdaySymbols = calendar.shortWeekdaySymbols
         weekdaySymbols.append(weekdaySymbols.removeFirst())
         
         weekdaySymbols.forEach { day in
@@ -48,7 +48,7 @@ class CalendarDaysView: UIView {
     
     private func generateDayLabel(day: String) -> UILabel {
         let label = UILabel()
-//        label.font = .openSansSemiBold12
+        label.font = .openSansSemiBold20
         label.textColor = .white
         label.textAlignment = .center
         label.text = day

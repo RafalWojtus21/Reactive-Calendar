@@ -7,14 +7,12 @@ protocol BasePresenter {}
 protocol BaseInteractor {}
 
 class BaseViewController: UIViewController {
-    var showNavigationController = true
+    var showNavigationController = false
     var animatedTransitioning: UIViewControllerAnimatedTransitioning?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(!showNavigationController, animated: animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
         navigationController?.navigationBar.tintColor = .white
     }
     

@@ -30,7 +30,7 @@ class CalendarCell: UICollectionViewCell, CollectionViewReusableCell {
     }()
     
     private lazy var calendarView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [dayLabel, cardioWorkoutBar, strengthWorkoutBar, spacer])
+        let view = UIStackView(arrangedSubviews: [dayLabel, spacer])
         view.axis = .vertical
         view.backgroundColor = .clear
         view.distribution = .fillEqually
@@ -38,13 +38,11 @@ class CalendarCell: UICollectionViewCell, CollectionViewReusableCell {
         return view
     }()
     
-    private lazy var cardioWorkoutBar = UIView(backgroundColor: .clear)
-    private lazy var strengthWorkoutBar = UIView(backgroundColor: .clear)
     private lazy var spacer = UIView(backgroundColor: .clear)
     
     private lazy var dayLabel: UILabel = {
         let label = UILabel()
-//        label.font = .openSansSemiBold16
+        label.font = .openSansSemiBold16
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -66,14 +64,6 @@ class CalendarCell: UICollectionViewCell, CollectionViewReusableCell {
     func configure(with viewModel: ViewModel) {
         dayLabel.text = "\(viewModel.dayNumber)"
         mainView.backgroundColor = viewModel.isCurrentMonth ? .quaternaryColor : .lightGray
-//        guard let workoutsHistory = viewModel.workoutsHistory else {
-//            cardioWorkoutBar.backgroundColor = .clear
-//            strengthWorkoutBar.backgroundColor = .clear
-//            return
-//        }
-//        let workoutPresence = checkWorkoutsPresence(date: viewModel.date, workoutsHistory: workoutsHistory, calendar: viewModel.calendar)
-//        cardioWorkoutBar.backgroundColor = workoutPresence.cardio ? .red : .clear
-//        strengthWorkoutBar.backgroundColor = workoutPresence.strength ? .green : .clear
     }
     
     // MARK: Private Implementation
@@ -92,23 +82,4 @@ class CalendarCell: UICollectionViewCell, CollectionViewReusableCell {
             $0.left.right.bottom.equalToSuperview()
         }
     }
-    
-//    private func checkWorkoutsPresence(date: Date, workoutsHistory: [FinishedWorkout], calendar: Calendar) -> (cardio: Bool, strength: Bool) {
-//        let startOfDay = calendar.startOfDay(for: date)
-//        guard let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) else { return (cardio: false, strength: false) }
-//
-//        let cardioWorkout = findWorkout(in: workoutsHistory, condition: { $0 == .cardio }, startOfDay: startOfDay, endOfDay: endOfDay)
-//        let strengthWorkout = findWorkout(in: workoutsHistory, condition: { $0 != .cardio }, startOfDay: startOfDay, endOfDay: endOfDay)
-//
-//        return (cardio: cardioWorkout != nil, strength: strengthWorkout != nil)
-//    }
-    
-//    private func findWorkout(in workouts: [FinishedWorkout], condition: (Exercise.Category) -> Bool, startOfDay: Date, endOfDay: Date) -> FinishedWorkout? {
-//        return workouts.first { workout in
-//            startOfDay <= workout.finishDate && workout.startDate <= endOfDay &&
-//            workout.exercisesDetails.contains { detail in
-//                condition(detail.exercise.category)
-//            }
-//        }
-//    }
 }

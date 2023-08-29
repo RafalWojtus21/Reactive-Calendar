@@ -1,8 +1,8 @@
 //
 //  CalendarPage.swift
-//  Fitmania
+//  ReactiveCalendar
 //
-//  Created by Rafał Wojtuś on 07/06/2023.
+//  Created by Rafał Wojtuś on 29/08/2023.
 //
 
 import UIKit
@@ -40,7 +40,7 @@ class CalendarPage: UIViewController, UICollectionViewDelegate {
     
     private lazy var currentMonthAndYearLabel: UILabel = {
         let label = UILabel()
-//        label.font = .openSansSemiBold24
+        label.font = .openSansSemiBold24
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 1
@@ -63,7 +63,8 @@ class CalendarPage: UIViewController, UICollectionViewDelegate {
         layout.scrollDirection = .vertical
         let spacing = 0
         let itemWidth = (Int(self.view.frame.width) / 7)
-        layout.itemSize = CGSize(width: itemWidth, height: 100)
+        let itemHeight = (Int(self.view.frame.height) / 8)
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = CGFloat(spacing)
         layout.minimumInteritemSpacing = CGFloat(spacing)

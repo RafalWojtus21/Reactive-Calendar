@@ -48,6 +48,7 @@
 		8B5B78472A9DF467005C7AB9 /* Localization.General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78462A9DF467005C7AB9 /* Localization.General.swift */; };
 		8B5B78492A9DF544005C7AB9 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78482A9DF544005C7AB9 /* HomeScreenViewController.swift */; };
 		8B5B784B2A9DF54A005C7AB9 /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */; };
+		8B5B78522A9DF93D005C7AB9 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78512A9DF93D005C7AB9 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,9 @@
 		8B5B78462A9DF467005C7AB9 /* Localization.General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.General.swift; sourceTree = "<group>"; };
 		8B5B78482A9DF544005C7AB9 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
+		8B5B784F2A9DF8BC005C7AB9 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		8B5B78502A9DF8BC005C7AB9 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		8B5B78512A9DF93D005C7AB9 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,7 @@
 				8B5B78202A9DE736005C7AB9 /* Models */,
 				8B5B78252A9DE792005C7AB9 /* Extensions */,
 				8B5B78182A9DE29C005C7AB9 /* Helpers */,
+				8B5B784E2A9DF89D005C7AB9 /* Fonts */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				8B5B78302A9DE836005C7AB9 /* UIViewExtension.swift */,
 				8B5B78392A9DEFF0005C7AB9 /* UIColorExtension.swift */,
 				8B5B783B2A9DF152005C7AB9 /* UIImageExtension.swift */,
+				8B5B78512A9DF93D005C7AB9 /* UIFontExtension.swift */,
 				8B5B78442A9DF3F1005C7AB9 /* StringExtension.swift */,
 			);
 			path = Extensions;
@@ -369,6 +375,15 @@
 				8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */,
 			);
 			path = "Settings Screen";
+			sourceTree = "<group>";
+		};
+		8B5B784E2A9DF89D005C7AB9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B5B784F2A9DF8BC005C7AB9 /* OpenSans-Regular.ttf */,
+				8B5B78502A9DF8BC005C7AB9 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +552,7 @@
 			files = (
 				8B5B78132A9DE0A5005C7AB9 /* MainFlowController.swift in Sources */,
 				8B5B78272A9DE79A005C7AB9 /* LoggerExtension.swift in Sources */,
+				8B5B78522A9DF93D005C7AB9 /* UIFontExtension.swift in Sources */,
 				8B5B782F2A9DE815005C7AB9 /* UICollectionViewCellExtension.swift in Sources */,
 				8B5B77F82A9DDF9B005C7AB9 /* CalendarScreenMiddleware.swift in Sources */,
 				8B5B78312A9DE836005C7AB9 /* UIViewExtension.swift in Sources */,
