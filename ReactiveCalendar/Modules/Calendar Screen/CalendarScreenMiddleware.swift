@@ -25,6 +25,8 @@ final class CalendarScreenMiddlewareImpl: CalendarScreenMiddleware, CalendarScre
         case .partialState(_): break
         case .effect(let effect):
             switch effect {
+            case .idle:
+                break
             }
         }
         return .just(result)

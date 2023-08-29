@@ -13,6 +13,7 @@ protocol HasNavigation {
 
 protocol Navigation {
     func set(view: BaseView, animated: Bool)
+    func setTabBar(viewControllers: [UINavigationController], animated: Bool, selectedTab: Int)
     func show(view: BaseView, animated: Bool)
     func pop()
     func popToRootViewController(animated: Bool)
@@ -56,6 +57,18 @@ final class MainNavigation: Navigation {
     func set(view: BaseView, animated: Bool) {
         guard let viewController = view as? UIViewController else { return }
         navigationController.setViewControllers([viewController], animated: animated)
+    }
+    
+    func setTabBar(viewControllers: [UINavigationController], animated: Bool, selectedTab: Int) {
+        let tabBar = UITabBarController()
+        tabBar.tabBar.tintColor = .primaryColor
+        tabBar.tabBar.unselectedItemTintColor = .primaryColor.withAlphaComponent(0.4)
+        tabBar.tabBar.backgroundColor = .secondaryColor
+        tabBar.modalPresentationStyle = .fullScreen
+        tabBar.setViewControllers(viewControllers, animated: true)
+        tabBar.selectedIndex = selectedTab
+        navigationController.setViewControllers([tabBar], animated: animated)
+        navigationController.view.window?.rootViewController?.dismiss(animated: true)
     }
 
     // MARK: - Push

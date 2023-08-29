@@ -29,6 +29,18 @@ final class CalendarScreenPresenterImpl: CalendarScreenPresenter {
     func bindIntents(view: View, triggerEffect: PublishSubject<Effect>) -> Observable<ViewState> {
         let intentResults = view.intents.flatMap { [unowned self] intent -> Observable<Result> in
             switch intent {
+            case .viewLoaded:
+                return interactor.generateCalendarItems()
+            case .idle:
+                return .just(.effect(.idle))
+            case .previousMonthButtonIntent:
+                return interactor.triggerPreviousMonth()
+            case .nextMonthButtonIntent:
+                return interactor.triggerNextMonth()
+            case .cellTappedIntent(item: let item):
+                return .just(.effect(.idle))
+            case .reloadDataForOffset(offset: let offset, swipeDirection: let swipeDirection):
+                return interactor.reloadData(for: offset, swipeDirection: swipeDirection)
             }
         }
         return Observable.merge(middleware.middlewareObservable, intentResults)

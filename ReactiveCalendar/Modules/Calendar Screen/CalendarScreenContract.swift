@@ -8,12 +8,24 @@
 import RxSwift
 
 enum CalendarScreenIntent {
+    case viewLoaded
+    case idle
+    case previousMonthButtonIntent
+    case nextMonthButtonIntent
+    case cellTappedIntent(item: CalendarItem)
+    case reloadDataForOffset(offset: Int, swipeDirection: CalendarPageSwipeDirection)
 }
 
 struct CalendarScreenViewState: Equatable {
+    var calendarMonths: [CalendarMonth] = []
+    var selectedMonthName: String = ""
+    var swipeDirection: CalendarPageSwipeDirection = .none
+    var shouldReloadCollectionView = false
+    var shouldSetPages = false
 }
 
 enum CalendarScreenEffect: Equatable {
+    case idle
 }
 
 struct CalendarScreenBuilderInput {
@@ -28,9 +40,18 @@ enum CalendarScreenResult: Equatable {
 }
 
 enum CalendarScreenPartialState: Equatable {
+    case loadCalendarMonths(calendarMonths: [CalendarMonth], swipeDirection: CalendarPageSwipeDirection)
+
     func reduce(previousState: CalendarScreenViewState) -> CalendarScreenViewState {
         var state = previousState
+        state.shouldReloadCollectionView = false
+        state.shouldSetPages = false
         switch self {
+        case .loadCalendarMonths(calendarMonths: let calendarMonths, swipeDirection: let swipeDirection):
+            state.calendarMonths = calendarMonths
+            state.swipeDirection = swipeDirection
+            state.shouldReloadCollectionView = true
+            state.shouldSetPages = true
         }
         return state
     }
@@ -55,6 +76,10 @@ protocol CalendarScreenPresenter: AnyObject, BasePresenter {
 }
 
 protocol CalendarScreenInteractor: BaseInteractor {
+    func generateCalendarItems() -> Observable<CalendarScreenResult>
+    func triggerPreviousMonth() -> Observable<CalendarScreenResult>
+    func triggerNextMonth() -> Observable<CalendarScreenResult>
+    func reloadData(for offset: Int, swipeDirection: CalendarPageSwipeDirection) -> Observable<CalendarScreenResult>
 }
 
 protocol CalendarScreenMiddleware {
