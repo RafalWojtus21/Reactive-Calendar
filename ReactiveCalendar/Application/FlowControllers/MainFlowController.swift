@@ -33,6 +33,7 @@ final class MainFlowController: AppNavigation {
     private lazy var extendedDependencies: ExtendedDependencies = ExtendedDependencies(dependencies: dependencies, appNavigation: self)
     
     // MARK: - Builders
+    
     private lazy var calendarScreenBuilder: CalendarScreenBuilder = CalendarScreenBuilderImpl(dependencies: extendedDependencies)
 
     // MARK: - Initialization
@@ -49,10 +50,10 @@ final class MainFlowController: AppNavigation {
     
     private func tabBarViewControllers() -> [UINavigationController] {
         let calendarScreen = calendarScreenBuilder.build(with: .init()).view
-        let homeScreen = calendarScreenBuilder.build(with: .init()).view
-        let settingsScreen = calendarScreenBuilder.build(with: .init()).view
+        let homeScreen = HomeScreenViewController()
+        let settingsScreen = SettingsScreenViewController()
         
-        let tabBarScreens = [calendarScreen, homeScreen, settingsScreen]
+        let tabBarScreens = [calendarScreen, homeScreen, settingsScreen] as [Any]
         let tabBarTitles = [L.calendarTitle, L.homeTitle, L.settingsTitle]
         let tabBarIcons: [UIImage?] = [.systemImageName(SystemImage.calendarIcon), .systemImageName(SystemImage.homeIcon), .systemImageName(SystemImage.settingsIcon)]
         

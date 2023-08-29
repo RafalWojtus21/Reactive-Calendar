@@ -46,6 +46,8 @@
 		8B5B78412A9DF3AB005C7AB9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78402A9DF3AB005C7AB9 /* Localization.swift */; };
 		8B5B78452A9DF3F1005C7AB9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78442A9DF3F1005C7AB9 /* StringExtension.swift */; };
 		8B5B78472A9DF467005C7AB9 /* Localization.General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78462A9DF467005C7AB9 /* Localization.General.swift */; };
+		8B5B78492A9DF544005C7AB9 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B78482A9DF544005C7AB9 /* HomeScreenViewController.swift */; };
+		8B5B784B2A9DF54A005C7AB9 /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		8B5B78402A9DF3AB005C7AB9 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		8B5B78442A9DF3F1005C7AB9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8B5B78462A9DF467005C7AB9 /* Localization.General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.General.swift; sourceTree = "<group>"; };
+		8B5B78482A9DF544005C7AB9 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				8B5B77FC2A9DDFA6005C7AB9 /* Calendar Screen */,
+				8B5B784C2A9DF54D005C7AB9 /* Home Screen */,
+				8B5B784D2A9DF553005C7AB9 /* Settings Screen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -347,6 +353,22 @@
 				8B5B78462A9DF467005C7AB9 /* Localization.General.swift */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		8B5B784C2A9DF54D005C7AB9 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8B5B78482A9DF544005C7AB9 /* HomeScreenViewController.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		8B5B784D2A9DF553005C7AB9 /* Settings Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8B5B784A2A9DF54A005C7AB9 /* SettingsScreenViewController.swift */,
+			);
+			path = "Settings Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +540,7 @@
 				8B5B782F2A9DE815005C7AB9 /* UICollectionViewCellExtension.swift in Sources */,
 				8B5B77F82A9DDF9B005C7AB9 /* CalendarScreenMiddleware.swift in Sources */,
 				8B5B78312A9DE836005C7AB9 /* UIViewExtension.swift in Sources */,
+				8B5B784B2A9DF54A005C7AB9 /* SettingsScreenViewController.swift in Sources */,
 				8B5B781E2A9DE6C2005C7AB9 /* CalendarPageViewController.swift in Sources */,
 				8B5B77C12A9DDC91005C7AB9 /* AppDelegate.swift in Sources */,
 				8B5B78292A9DE7CD005C7AB9 /* CalendarDaysView.swift in Sources */,
@@ -539,6 +562,7 @@
 				8B5B78242A9DE764005C7AB9 /* CalendarItem.swift in Sources */,
 				8B5B78412A9DF3AB005C7AB9 /* Localization.swift in Sources */,
 				8B5B78472A9DF467005C7AB9 /* Localization.General.swift in Sources */,
+				8B5B78492A9DF544005C7AB9 /* HomeScreenViewController.swift in Sources */,
 				8B5B77FB2A9DDF9B005C7AB9 /* CalendarScreenInteractor.swift in Sources */,
 				8B5B780F2A9DE079005C7AB9 /* Base.swift in Sources */,
 				8B5B782D2A9DE7F6005C7AB9 /* CalendarCell.swift in Sources */,
