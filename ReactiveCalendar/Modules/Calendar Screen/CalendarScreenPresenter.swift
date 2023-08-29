@@ -37,7 +37,7 @@ final class CalendarScreenPresenterImpl: CalendarScreenPresenter {
                 return interactor.triggerPreviousMonth()
             case .nextMonthButtonIntent:
                 return interactor.triggerNextMonth()
-            case .cellTappedIntent(item: let item):
+            case .cellTappedIntent:
                 return .just(.effect(.idle))
             case .reloadDataForOffset(offset: let offset, swipeDirection: let swipeDirection):
                 return interactor.reloadData(for: offset, swipeDirection: swipeDirection)

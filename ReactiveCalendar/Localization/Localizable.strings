@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  ReactiveCalendar
+
+  Created by Rafał Wojtuś on 29/08/2023.
+  
+*/
+
+// MARK: General
+
+"General.CalendarTitle" = "Calendar";
+"General.HomeTitle" = "Home";
+"General.SettingsTitle" = "Settings";

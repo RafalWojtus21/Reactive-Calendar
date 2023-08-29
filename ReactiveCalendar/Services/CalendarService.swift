@@ -28,15 +28,10 @@ final class CalendarServiceImpl: CalendarService {
     private let calendar = Calendar.current
     var monthIndexTracker = BehaviorRelay<Int>(value: 0)
     var monthNameTracker = BehaviorRelay<String>(value: "")
-//    private var workoutsHistory: [FinishedWorkout] = []
-//    private var workoutsHistorySubject = ReplaySubject<[FinishedWorkout]>.create(bufferSize: 1)
     
     // MARK: Initialization
     
-    init() {
-//        self.workoutsHistoryService = workoutsHistoryService
-//        getWorkoutsHistory()
-    }
+    init() {}
 
     // MARK: Public Implementation
 

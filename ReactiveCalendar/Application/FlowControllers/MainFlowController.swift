@@ -11,6 +11,7 @@ protocol AppNavigation: AnyObject {
 
 final class MainFlowController: AppNavigation {
     typealias Dependencies = HasNavigation
+    typealias L = Localization.General
     
     struct ExtendedDependencies: Dependencies, HasAppNavigation, HasCalendarService {
         private let dependencies: Dependencies
@@ -52,7 +53,7 @@ final class MainFlowController: AppNavigation {
         let settingsScreen = calendarScreenBuilder.build(with: .init()).view
         
         let tabBarScreens = [calendarScreen, homeScreen, settingsScreen]
-        let tabBarTitles = ["Calendar", "Home", "Settings"]
+        let tabBarTitles = [L.calendarTitle, L.homeTitle, L.settingsTitle]
         let tabBarIcons: [UIImage?] = [.systemImageName(SystemImage.calendarIcon), .systemImageName(SystemImage.homeIcon), .systemImageName(SystemImage.settingsIcon)]
         
         var viewControllers = [UINavigationController]()
