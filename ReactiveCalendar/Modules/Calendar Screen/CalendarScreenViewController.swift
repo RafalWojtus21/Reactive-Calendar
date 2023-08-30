@@ -49,6 +49,7 @@ final class CalendarScreenViewController: BaseViewController, CalendarScreenView
     
     private func layoutView() {
         view.backgroundColor = .primaryColor
+        
         calendarPageViewController.willMove(toParent: self)
         guard let pageViewControllerView = calendarPageViewController.view else { return }
         view.addSubview(pageViewControllerView)
